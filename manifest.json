@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "⚡ BÚT THẦN - Cyber Workspace Tool",
+  "version": "1.0.0",
+  "description": "Công cụ quản lý, quét UUID và tự động hóa tham gia ChatGPT Workspace với bảo mật tuyệt đối và giao diện Hacker.",
+  "permissions": [
+    "storage",
+    "activeTab"
+  ],
+  "host_permissions": [
+    "https://chatgpt.com/*"
+  ],
+  "action": {
+    "default_title": "Kích hoạt Bút Thần"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://chatgpt.com/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}
